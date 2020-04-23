@@ -4,13 +4,22 @@ manifests:
     platform:
       architecture: amd64
       os: linux
+  - image: schmailzl/simple-reverse-proxy:i386
+    platform:
+      architecture: i386
+      os: linux
+  - image: schmailzl/simple-reverse-proxy:armv6
+    platform:
+      architecture: arm
+      os: linux
+      variant: v6
+  - image: schmailzl/simple-reverse-proxy:armv7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
   - image: schmailzl/simple-reverse-proxy:aarch64
     platform:
       architecture: arm64
       os: linux
       variant: v8
-  - image: schmailzl/simple-reverse-proxy:armhf
-    platform:
-      architecture: arm
-      os: linux
-      variant: v6
