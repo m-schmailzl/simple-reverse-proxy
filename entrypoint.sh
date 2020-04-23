@@ -24,8 +24,14 @@ else
 		exit 2
 	fi
 	
+	auth_file="/etc/nginx/.htpasswd"
+	if ! [ -z "$PROXY_AUTH_FILE" ]
+	then
+		auth_file="$PROXY_AUTH_FILE"
+	fi
+	
 	export PROXY_AUTH_BASIC_LINE="auth_basic \"$PROXY_AUTH_MESSAGE\";"
-	export PROXY_AUTH_BASIC_USER_FILE_LINE="auth_basic_user_file $PROXY_AUTH_FILE;"
+	export PROXY_AUTH_BASIC_USER_FILE_LINE="auth_basic_user_file $auth_file;"
 	
 	htpasswd -b -c "$PROXY_AUTH_FILE" "$PROXY_AUTH_USER" "$PROXY_AUTH_PASSWORD"
 fi
