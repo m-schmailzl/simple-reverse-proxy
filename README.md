@@ -3,7 +3,7 @@ Docker image for creating simple reverse proxies with HTTP Basic authentificatio
 
 This image is not finished yet. Description will follow.
 
-##### Available options: 
+#### Available options: 
 
 **PROXY_URL**
 
