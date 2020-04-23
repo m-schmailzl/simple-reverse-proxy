@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[[ "${DOCKER_TAG}" == "amd64" ]] && \
+    { echo 'qemu-user-static: Registration not required for this arch';exit 0; }
+
+# Register qemu-*-static for all supported processors except the 
+# current one, but also remove all registered binfmt_misc before
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
