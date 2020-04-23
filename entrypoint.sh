@@ -33,7 +33,7 @@ else
 	export PROXY_AUTH_BASIC_LINE="auth_basic \"$PROXY_AUTH_MESSAGE\";"
 	export PROXY_AUTH_BASIC_USER_FILE_LINE="auth_basic_user_file $auth_file;"
 	
-	htpasswd -b -c "$PROXY_AUTH_FILE" "$PROXY_AUTH_USER" "$PROXY_AUTH_PASSWORD"
+	htpasswd -b -c "$auth_file" "$PROXY_AUTH_USER" "$PROXY_AUTH_PASSWORD"
 fi
 
 echo "Generating configuration..."
