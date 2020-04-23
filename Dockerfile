@@ -7,6 +7,5 @@ COPY nginx.conf /
 RUN chmod +x /entrypoint.sh
 
 ENV PROXY_AUTH_MESSAGE Please login:
-ENV PROXY_AUTH_FILE /etc/nginx/.htpasswd
 
 ENTRYPOINT ["/entrypoint.sh"]
