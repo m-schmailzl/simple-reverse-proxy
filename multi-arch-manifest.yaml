@@ -6,7 +6,7 @@ manifests:
       os: linux
   - image: schmailzl/simple-reverse-proxy:i386
     platform:
-      architecture: i386
+      architecture: 386
       os: linux
   - image: schmailzl/simple-reverse-proxy:armv6
     platform:
