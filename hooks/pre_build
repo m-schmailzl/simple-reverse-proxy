@@ -1,7 +1,10 @@
 #!/bin/bash
 
-[[ "${DOCKER_TAG}" == "amd64" ]] && \
-    { echo 'qemu-user-static: Registration not required for this arch';exit 0; }
+if [[ ${DOCKER_TAG} == "amd64" ]] || [[ ${DOCKER_TAG} = dev* ]]
+then
+  echo 'qemu-user-static: Download not required for this arch'
+  exit 0
+fi
 
 # Register qemu-*-static for all supported processors except the 
 # current one, but also remove all registered binfmt_misc before
