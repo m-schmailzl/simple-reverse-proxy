@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if [[ ${DOCKER_TAG} = dev* ]]
+then
+  echo 'No downloads are required for this tag.'
+  exit 0
+fi
+
 API="https://api.github.com/repos/estesp/manifest-tool/tags"
 TAG=$(curl -Ls $API | awk -F'"' '/name.*v[0-9]/ {print $4; exit}')
 URL="https://github.com/estesp/manifest-tool/releases/download/${TAG}/manifest-tool-linux-amd64"
@@ -7,7 +13,7 @@ echo "Downloading manifest-tool from ${URL}..."
 curl -LSso manifest-tool "${URL}"
 chmod +x manifest-tool
 
-if [[ ${DOCKER_TAG} == "amd64" ]] || [[ ${DOCKER_TAG} == "dev" ]]
+if [[ ${DOCKER_TAG} == "amd64" ]]
 then
   echo 'qemu-user-static: Download not required for this arch'
   exit 0

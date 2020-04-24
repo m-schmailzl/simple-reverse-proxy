@@ -3,7 +3,7 @@
 # Use manifest-tool to create the manifest, given the experimental
 # "docker manifest" command isn't available yet on Docker Hub.
 
-if [ -z "$NO_MANIFEST" ]
+if [ -z "$NO_MANIFEST" ] && ! [[ ${DOCKER_TAG} = dev* ]]
 then
   ./manifest-tool push from-spec multi-arch-manifest.yaml
 fi
