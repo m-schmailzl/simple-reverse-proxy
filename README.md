@@ -31,6 +31,8 @@ You have to set at least `PROXY_URL`.
 
 * `PROXY_URL` - The url you want to proxy
 
+* `PROXY_SSL_VERIFY` - If set to "no", the container will not check the SSL certificate of the proxied server when using HTTPS (default: "yes") 
+
 #### HTTP authentication
 
 HTTP Basic authentication will be enabled if you set `PROXY_AUTH_USER` and/or `PROXY_AUTH_FILE`.
