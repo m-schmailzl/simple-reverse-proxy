@@ -7,7 +7,7 @@ then
 fi
 
 API="https://api.github.com/repos/estesp/manifest-tool/tags"
-TAG=$(curl -Ls $API | awk -F'"' '/name.*v[0-9]/ {print $4; exit}')
+TAG="v1.0.3"
 URL="https://github.com/estesp/manifest-tool/releases/download/${TAG}/manifest-tool-linux-amd64"
 echo "Downloading manifest-tool from ${URL}..."
 curl -LSso manifest-tool "${URL}"
@@ -20,7 +20,7 @@ then
 fi
 
 API="https://api.github.com/repos/multiarch/qemu-user-static/tags"
-TAG="v1.0.3"
+TAG=$(curl -Ls $API | awk -F'"' '/name.*v[0-9]/ {print $4; exit}')
 
 ARCH=${DOCKER_TAG}
 if [[ ${ARCH} = arm* ]]
