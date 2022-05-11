@@ -39,8 +39,12 @@ fi
 if [ -z "$PROXY_REPLACE_URL" ]
 then
 	export SUB_FILTER=""
+	export SUB_FILTER2=""
 else
+	URL=$(echo "$PROXY_URL" | sed -i s/'http[s]\?:\/\/'//)
+	REPLACE=$(echo "$PROXY_REPLACE_URL" | sed -i s/'http[s]\?:\/\/'//)
 	export SUB_FILTER="sub_filter \"$PROXY_URL\" \"$PROXY_REPLACE_URL\";"
+	export SUB_FILTER2="sub_filter \"//$URL\" \"//$REPLACE\";"
 fi
 
 echo "Generating configuration..."

@@ -31,7 +31,7 @@ You have to set at least `PROXY_URL`.
 
 ## Environment variables
 
-* `PROXY_URL` - The url you want to proxy
+* `PROXY_URL` - The url you want to proxy including the protocol
 
 * `PROXY_SSL_VERIFY` - If set to "off", the container will not check the SSL certificate of the proxied server when using HTTPS. (default: "on") 
 
