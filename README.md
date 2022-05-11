@@ -31,9 +31,11 @@ You have to set at least `PROXY_URL`.
 
 ## Environment variables
 
-* `PROXY_URL` - The url you want to proxy
+* `PROXY_URL` - The url you want to proxy including the protocol
 
-* `PROXY_SSL_VERIFY` - If set to "off", the container will not check the SSL certificate of the proxied server when using HTTPS (default: "on") 
+* `PROXY_SSL_VERIFY` - If set to "off", the container will not check the SSL certificate of the proxied server when using HTTPS. (default: "on") 
+
+* `PROXY_REPLACE_URL` - If set, the container will replace references to the proxied URL in the HTML response with this URL.
 
 #### HTTP authentication
 
@@ -62,4 +64,5 @@ services:
     environment:
       VIRTUAL_HOST: mydomain.com
       PROXY_URL: http://192.168.178.1
+      PROXY_REPLACE_URL: https://mydomain.com
 ```

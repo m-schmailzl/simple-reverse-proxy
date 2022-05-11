@@ -36,6 +36,15 @@ else
 	htpasswd -b -c "$auth_file" "$PROXY_AUTH_USER" "$PROXY_AUTH_PASSWORD"
 fi
 
+if [ -z "$PROXY_REPLACE_URL" ]
+then
+	export SUB_FILTER=""
+else
+	URL=$(echo "$PROXY_URL" | sed s/'http[s]\?:'//)
+	REPLACE=$(echo "$PROXY_REPLACE_URL" | sed s/'http[s]\?:'//)
+	export SUB_FILTER="sub_filter \"$URL\" \"$REPLACE\";"
+fi
+
 echo "Generating configuration..."
 envsubst < /nginx.conf | sed -e 's/§/$/g' > /etc/nginx/nginx.conf
 
