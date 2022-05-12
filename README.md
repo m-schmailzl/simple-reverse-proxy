@@ -37,6 +37,8 @@ You have to set at least `PROXY_URL`.
 
 * `PROXY_REPLACE_URL` - If set, the container will replace references to the proxied URL in the HTML response with this URL.
 
+* `ADDITIONAL_CONFIG` - Additional nginx location configuration
+
 #### HTTP authentication
 
 HTTP Basic authentication will be enabled if you set `PROXY_AUTH_USER` and/or `PROXY_AUTH_FILE`.
