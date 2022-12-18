@@ -21,7 +21,7 @@ The container is meant to be used with another reverse proxy which handles encry
 
 - Fully configurable via environment variables
 
-- Available on AMD64, i386, ARMv6 and ARMv8(64-bit)
+- Available on AMD64, i386, ARMv6 and ARM64
 
 # Usage
 

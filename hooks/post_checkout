@@ -23,7 +23,10 @@ API="https://api.github.com/repos/multiarch/qemu-user-static/tags"
 TAG=$(curl -Ls $API | awk -F'"' '/name.*v[0-9]/ {print $4; exit}')
 
 ARCH=${DOCKER_TAG}
-if [[ ${ARCH} = arm* ]]
+if [[ ${ARCH} = "arm64" ]]
+then
+  ARCH="aarch64"
+elif [[ ${ARCH} = arm* ]]
 then
   ARCH="arm"
 fi
