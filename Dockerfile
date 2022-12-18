@@ -1,8 +1,8 @@
 FROM nginx:stable-alpine AS module-build
 
 WORKDIR /tmp
-RUN export nginx_version=$(nginx -v 2>&1 | awk '{split($0, a); print a[3]}' | awk '{split($0, a, "/"); print a[2]}') && \
-    apk add --no-cache curl gnupg ca-certificates git gcc g++ pcre pcre-dev zlib zlib-dev make && \
+RUN apk add --no-cache bash tar curl gnupg ca-certificates git gcc g++ pcre pcre-dev zlib zlib-dev make && \
+    export nginx_version=$(nginx -v 2>&1 | awk '{split($0, a); print a[3]}' | awk '{split($0, a, "/"); print a[2]}') && \
     git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module.git && \
     curl https://nginx.org/download/nginx-$nginx_version.tar.gz -o nginx.tar.gz && \
     echo https://nginx.org/download/nginx-$nginx_version.tar.gz && \
