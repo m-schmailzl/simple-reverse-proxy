@@ -1,4 +1,4 @@
-FROM nginx:stable-alpine AS module-build
+FROM i386/nginx:stable-alpine AS module-build
 
 WORKDIR /tmp
 RUN export nginx_version=$(nginx -v 2>&1 | awk '{split($0, a); print a[3]}' | awk '{split($0, a, "/"); print a[2]}') && \
