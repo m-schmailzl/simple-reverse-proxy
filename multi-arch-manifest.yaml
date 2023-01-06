@@ -13,7 +13,7 @@ manifests:
       architecture: arm
       os: linux
       variant: v6
-  - image: schmailzl/simple-reverse-proxy:aarch64
+  - image: schmailzl/simple-reverse-proxy:arm64
     platform:
       architecture: arm64
       os: linux
