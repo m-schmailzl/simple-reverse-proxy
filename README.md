@@ -37,6 +37,8 @@ You have to set at least `PROXY_URL`.
 
 * `PROXY_REPLACE_URL` - If set, the container will replace references to the proxied URL in the HTML response with this URL.
 
+* `LOCATION` - Path under which the website will be available. (default: "/")
+
 * `ADDITIONAL_CONFIG` - Additional nginx location configuration
 
 #### HTTP authentication

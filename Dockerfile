@@ -20,6 +20,6 @@ COPY entrypoint.sh /
 COPY nginx.conf /
 RUN chmod +x /entrypoint.sh
 
-ENV PROXY_AUTH_MESSAGE="Please login:" PROXY_SSL_VERIFY="on" ADDITIONAL_CONFIG=""
+ENV PROXY_AUTH_MESSAGE="Please login:" PROXY_SSL_VERIFY="on" LOCATION="/" ADDITIONAL_CONFIG=""
 
 ENTRYPOINT ["/entrypoint.sh"]
