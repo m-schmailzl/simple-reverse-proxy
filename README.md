@@ -1,7 +1,7 @@
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/schmailzl/simple-reverse-proxy)
 ![GitHub issues](https://img.shields.io/github/issues-raw/m-schmailzl/simple-reverse-proxy)
 ![License](https://img.shields.io/github/license/m-schmailzl/simple-reverse-proxy)
-![Docker Image Size (amd64)](https://img.shields.io/docker/image-size/schmailzl/simple-reverse-proxy/amd64)
+![Docker Image Size (amd64)](https://img.shields.io/docker/image-size/schmailzl/simple-reverse-proxy)
 ![Docker Pulls](https://img.shields.io/docker/pulls/schmailzl/simple-reverse-proxy)
 ![Docker Stars](https://img.shields.io/docker/stars/schmailzl/simple-reverse-proxy)
 
